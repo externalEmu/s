@@ -21,7 +21,7 @@ update.bat
 exit
 
 :A
-set /p menu="Do you want to install Yuzu? (Y/N/Cancel): "
+set /p menu="Do you want to install Yuzu? (Y/N/System Archives/Cancel): "
 if %menu%==Y goto Yes
 if %menu%==y goto Yes
 if %menu%==Yes goto Yes
@@ -34,6 +34,10 @@ if %menu%==C goto C
 if %menu%==c goto C
 if %menu%==Cancel goto C
 if %menu%==cancel goto C
+if %menu%==System Archives goto SA
+if %menu%==SA goto SA
+if %menu%==system archives goto SA
+if %menu%==sa goto SA
 cls
 set /p pause="Press any key to continue!... "
 
@@ -62,6 +66,19 @@ echo Writing keys to %appdata%\yuzu\keys
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/prod.keys', 'prod.keys')
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/title.keys', 'title.keys')
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/shared_font.bin', 'shared_font.bin')
+pause
+
+:SA
+echo.
+echo We will now download the System Archives. This may take a while, it will be blank, but let it run.
+cd %appdata%\yuzu\nand\system
+powershell.exe (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/0gwmpgus9t4q1dm/System_Archives.zip?dl=1', 'System_Archives.zip')
+echo unzipping System Archives.
+powershell.exe (new-object System.Net.WebClient).DownloadFile('http://stahlworks.com/dev/unzip.exe', 'unzip.exe')
+unzip.exe System_Archives.zip
+echo Writing System Archives to %appdata%\yuzu\keys\nand\system
+del System_Archives.zip
+del unzip.exe
 pause
 
 :C
