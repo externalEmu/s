@@ -67,11 +67,11 @@ grecaptcha.execute('6LcKP4cUAAAAAJZz5QWyv3eatowc4i-TW5AdErsA', {action: 'action_
 });
 </script>
 
-<form onsubmit="return formDone();" class="my-form">
+<form onsubmit="#formDone" class="my-form">
     <input type="submit" value="Get Link in B64">
 </form>
 
-<script>
+<script id="formDone">
 function formDone(); {
 document.write('aHR0cHM6Ly9kaXNjb3JkLmdnL3R3Z1RjaFg=');
 }
