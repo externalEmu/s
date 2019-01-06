@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,14 +59,24 @@ overflow-x: hidden;
 <br>
 
 <script>
+function Captcha() {
 grecaptcha.ready(function() {
 grecaptcha.execute('6LcKP4cUAAAAAJZz5QWyv3eatowc4i-TW5AdErsA', {action: 'action_name'})
 .then(function(token) {
 // Verify the token on the server.
 });
 });
+function giveLink() {
+    alert('aHR0cHM6Ly9kaXNjb3JkLmdnL3R3Z1RjaFg=');
+    return false;
+}
+}
 </script>
 
+<form onsubmit="return Captcha();" class="my-form">
+    <input type="submit" value="Get Link in B64">
+</form>
+  
 </div>
 <div class="container center" id="legal">
 <a href="/legal">Privacy & Legal</a>
