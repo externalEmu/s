@@ -63,15 +63,20 @@ grecaptcha.ready(function() {
 grecaptcha.execute('6LcKP4cUAAAAAJZz5QWyv3eatowc4i-TW5AdErsA', {action: 'action_name'})
 .then(function(token) {
 // Verify the token on the server.
-    document.write('aHR0cHM6Ly9kaXNjb3JkLmdnL3R3Z1RjaFg=');
 });
 });
 </script>
 
-<form onsubmit="return function();" class="my-form">
+<form onsubmit="return formDone();" class="my-form">
     <input type="submit" value="Get Link in B64">
 </form>
-  
+
+<script>
+function formDone(); {
+document.write('aHR0cHM6Ly9kaXNjb3JkLmdnL3R3Z1RjaFg=');
+}
+</script>
+    
 </div>
 <div class="container center" id="legal">
 <a href="/legal">Privacy & Legal</a>
