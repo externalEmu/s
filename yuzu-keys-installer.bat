@@ -1,6 +1,6 @@
 @echo off
-cls
 title Yuzu Keys Installer
+cls
 
 set /p menu="Do you want to update script? (Y/N): "
 if %menu%==Y goto UY
@@ -65,7 +65,6 @@ cd keys
 echo Writing keys to %appdata%\yuzu\keys
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/prod.keys', 'prod.keys')
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/title.keys', 'title.keys')
-powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/shared_font.bin', 'shared_font.bin')
 pause
 
 :SA
@@ -74,7 +73,7 @@ echo We will now download the System Archives. This may take a while, it will be
 cd %appdata%\yuzu\nand\system
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/0gwmpgus9t4q1dm/System_Archives.zip?dl=1', 'System_Archives.zip')
 echo unzipping System Archives.
-powershell.exe (new-object System.Net.WebClient).DownloadFile('http://stahlworks.com/dev/unzip.exe', 'unzip.exe')
+powershell.exe (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/wcdhkat6oz0i3tm/unzip.exe?dl=1', 'unzip.exe')
 unzip.exe System_Archives.zip
 echo Writing System Archives to %appdata%\yuzu\keys\nand\system
 del System_Archives.zip
