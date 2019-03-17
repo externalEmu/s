@@ -64,7 +64,7 @@ mkdir keys
 cd keys
 echo Writing keys to %appdata%\yuzu\keys
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/prod.keys', 'prod.keys')
-powershell.exe (new-object System.Net.WebClient).DownloadFile('https://s.hipeopeodev.us/title.keys', 'title.keys')
+powershell.exe (new-object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/riggzh/ns/master/NUTDB.txt', 'title.keys')
 pause
 
 :SA
