@@ -81,11 +81,11 @@ echo We will now download the keys.
 cd %appdata%\yuzu
 IF EXIST keys\prod.keys (
 	echo Deleting old keys...
-	rmdir keys
+	rmdir /Q /S keys
 )
 IF EXIST keys\title.keys (
 	echo Deleting old keys...
-	rmdir keys
+	rmdir /Q /S keys
 )
 mkdir keys
 cd keys
