@@ -19,7 +19,7 @@ cls
 echo Updating
 echo.
 IF EXIST update.bat (
-	rm update.bat
+	del update.bat
 	echo Removing old script...
 )
 echo Downloading new version...
@@ -58,7 +58,7 @@ echo This will download the Yuzu installer, and run it. Allow it to install.
 echo.
 IF EXIST yuzu_installer.exe (
 	echo Removing old version...
-	rm yuzu_installer.exe
+	del yuzu_installer.exe
 )
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/4vdziiwebovju8x/yuzu_install.exe?dl=1', 'yuzu_install.exe')
 if %errorlevel% == 0 (
@@ -111,13 +111,13 @@ if %errorlevel% == 0(
 	unzip.exe System_Archives.zip
 ) else(
 	echo Fatal error in :SA, cleaning up and exiting.
-	rm System_Archives.zip
-	rm unzip.exe
+	del System_Archives.zip
+	del unzip.exe
 	exit
 )
 echo Cleaning up...
-rm System_Archives.zip
-rm unzip.exe
+del System_Archives.zip
+del unzip.exe
 pause
 
 :C
