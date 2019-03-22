@@ -63,13 +63,13 @@ IF EXIST yuzu_installer.exe (
 powershell.exe (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/4vdziiwebovju8x/yuzu_install.exe?dl=1', 'yuzu_install.exe')
 if %errorlevel% == 0 (
 	echo We will now install yuzu, then delete the installer.
-	yuzu-installer.exe
+	yuzu_install.exe
 ) else (
 	echo Error encountered in :Yes, %errorlevel%
 	echo Cleaning up...
 )
 del yuzu_install.exe
-del yuzu_installer.log
+del yuzu_install.log
 echo Done.
 pause
 
